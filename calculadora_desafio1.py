@@ -2,12 +2,149 @@ def calculadora(consumo: list, tarifa: float, classe: str) -> tuple:
     """
     retorna uma tupla de floats contendo economia anual, economia mensal, desconto aplicado e cobertura.
     """
-    economia_anual = 0
-    economia_mensal = 0
-    desconto_aplicado = 0
-    cobertura = 0
+    economia_anual =0.0
+    economia_mensal =0.0
+    desconto_aplicado =0.0
+    cobertura =0.0
 
     # Desenvolva seu código aqui #
+
+    consumo_total_tres_messes=0.0
+    consumo_medio = 0.0
+    valor_coberto=0.0
+    valor_coberto_fora=0.0
+    taxa_desconto=0.0
+    taxa_desconto_fora=0.0
+    valor_pos_desconto=0.0
+    valor_do_disconto=0.0
+    taxa_cobertura=0.0
+    valor_economia=0.0
+    valor_final_pago=0.0
+    valor_final_sem_desconto =0.0
+    valor_final_diferenca=0.0
+
+    #calcilo total dos 3 meses
+    
+    consumo_total_tres_messes = sum(consumo)
+    
+    consumo_medio = consumo_total_tres_messes/3.0
+        
+    if consumo_medio < 10000:
+            #aplica a tarifa para saber o valor pago inicialmente
+            taxa_cobertura =0.9
+            valor_inicial = consumo_medio*tarifa
+            #aplica o desconta 
+            if classe == "Residencial":
+                #18%
+                taxa_desconto =0.18
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+
+                
+                
+
+            if classe == "Comercial":
+                #16%
+                taxa_desconto =0.16
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+
+            if classe == "Industrial":
+                #12%
+                taxa_desconto =0.12
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+
+    if consumo_medio >= 10000 and consumo_medio <= 20000:
+            #aplica a tarifa para saber o valor pago inicialmente
+            taxa_cobertura =0.95
+            valor_inicial = consumo_medio*tarifa
+            #aplica o desconta 
+            if classe == "Residencial":
+                #22%
+                taxa_desconto =0.22
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+
+
+            if classe == "Comercial":
+                #18%
+                taxa_desconto =0.18
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+
+            if classe == "Industrial":
+                #15%
+                taxa_desconto =0.15
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+                
+    if consumo_medio > 20000:
+            #aplica a tarifa para saber o valor pago inicialmente
+            taxa_cobertura =0.99
+            valor_inicial = consumo_medio*tarifa
+            #aplica o desconta 
+            if classe == "Residencial":
+                #25%
+                taxa_desconto =0.25
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+
+            if classe == "Comercial":
+                #22%
+                taxa_desconto =0.22
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+
+            if classe == "Industrial":
+                #18%
+                taxa_desconto =0.18
+                taxa_desconto_fora = 1-taxa_desconto
+                
+                valor_pos_desconto = valor_inicial*taxa_desconto
+                valor_do_disconto = valor_inicial*taxa_desconto_fora
+
+                valor_final_pago = valor_pos_desconto*taxa_cobertura
+    
+    economia_mensal = valor_final_pago
+    economia_anual = 12*economia_mensal
+    desconto_aplicado = taxa_desconto
+    cobertura = taxa_cobertura
+
+
+    # Fim do codigo do teste
 
     return (
         round(economia_anual, 2),

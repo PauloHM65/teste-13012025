@@ -52,3 +52,15 @@ Portanto, desenvolva um código de web scraping que obtenha a tarifa diretamente
 5. Inclua neste mesmo README uma seção detalhada que explique claramente os passos necessários para executar o código. Certifique-se de que as instruções sejam precisas, organizadas e fáceis de entender, pois os avaliadores seguirão essa documentação;
 6. A entrega deve ser realizada dentro do prazo estabelecido;
 7. O candidato deve fazer um fork do repositório. A entrega pode ser realizada por meio de um pull request para o repositório original (o que será considerado um diferencial) ou enviando o link do seu repositório para o e-mail lucas@dg.energy.
+
+<h2 id="desafio2" style="text-align:center;border-bottom:none">Como executar os testes:</h2>
+
+### Desafio 1:
+
+1. Baixar ou atualizar o python na varsao segura mais recente(lts)
+2. Entrar na IDE,abir o arquivo na pasta onde ele se encontra.
+3. Executar a seguinte linha no terminal da IDE 
+```python
+ python calculadora_desafio1.py
+ ```
+ ### Desafio 2:
